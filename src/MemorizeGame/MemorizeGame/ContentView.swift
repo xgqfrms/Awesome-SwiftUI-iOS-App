@@ -9,20 +9,63 @@
 import SwiftUI
 
 // ✅ some View，返回任意类型的 View, 自动推断 View 类型
-//struct ContentView: View {
-//  var body: some View {
-//    Text("Hello, World!")
-//  }
-//}
-
-// 👎 Text 返回 Text 类型的 View, 显示指定返回的 View 类型
 struct ContentView: View {
-  var body: Text {
-    // Text("Hello, SwiftUI!")
-    // return 可以省略
-    return Text("Hello, SwiftUI!")
+  var body: some View {
+    HStack {
+      ForEach(0..<4) { index in
+        // print("index \(index)")
+        CardView(isFaceUp: (index % 2 == 0))
+      }
+    }
+//    HStack {
+//      CardView(isFaceUp: true)
+//      CardView(isFaceUp: false)
+//      CardView(isFaceUp: true)
+//      CardView(isFaceUp: false)
+//    }
   }
 }
+
+
+struct CardView: View {
+  // var isFaceUp: Bool
+  var isFaceUp: Bool = false
+  var body: some View {
+    ZStack {
+      if isFaceUp {
+        RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
+        RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3.0)
+        Text("👻").font(.largeTitle)
+      } else {
+        RoundedRectangle(cornerRadius: 10.0).fill(Color.orange)
+      }
+    }.padding()
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
