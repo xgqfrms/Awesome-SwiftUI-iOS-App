@@ -13,6 +13,7 @@
 		701B0DD92549BB6C00D2EEEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701B0DD82549BB6C00D2EEEE /* Assets.xcassets */; };
 		701B0DDC2549BB6C00D2EEEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701B0DDB2549BB6C00D2EEEE /* Preview Assets.xcassets */; };
 		701B0DDF2549BB6C00D2EEEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 701B0DDD2549BB6C00D2EEEE /* LaunchScreen.storyboard */; };
+		701B0DE72549C87F00D2EEEE /* SwiftUIViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B0DE62549C87F00D2EEEE /* SwiftUIViewTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		701B0DDB2549BB6C00D2EEEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		701B0DDE2549BB6C00D2EEEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		701B0DE02549BB6C00D2EEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		701B0DE62549C87F00D2EEEE /* SwiftUIViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				701B0DD22549BB6B00D2EEEE /* AppDelegate.swift */,
 				701B0DD42549BB6B00D2EEEE /* SceneDelegate.swift */,
 				701B0DD62549BB6B00D2EEEE /* ContentView.swift */,
+				701B0DE62549C87F00D2EEEE /* SwiftUIViewTest.swift */,
 				701B0DD82549BB6C00D2EEEE /* Assets.xcassets */,
 				701B0DDD2549BB6C00D2EEEE /* LaunchScreen.storyboard */,
 				701B0DE02549BB6C00D2EEEE /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				701B0DD32549BB6B00D2EEEE /* AppDelegate.swift in Sources */,
 				701B0DD52549BB6B00D2EEEE /* SceneDelegate.swift in Sources */,
+				701B0DE72549C87F00D2EEEE /* SwiftUIViewTest.swift in Sources */,
 				701B0DD72549BB6B00D2EEEE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
