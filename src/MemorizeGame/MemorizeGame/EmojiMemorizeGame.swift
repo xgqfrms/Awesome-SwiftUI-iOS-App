@@ -23,9 +23,16 @@ class EmojiMemorizeGame {
   // }
   // private(set) 对内可修改, 对外可见
   // private(set) var model: MemorizeGame<String>
-  private var model: MemorizeGame<String> =
+  private var model: MemorizeGame<String> = EmojiMemorizeGame.createMemoriziGame();
+  static func createMemoriziGame() -> MemorizeGame<String> {
+    let emojis: Array<String> = ["💩", "👻", "🚀", "🐥", "🎃"]
+    return MemorizeGame<String>(numberOfPairsOfCards: 2) {pairIndex in
+     return emojis[pairIndex]
+    };
+    // return MemorizeGame<String>(numberOfPairsOfCards: 2) {pairIndex in emojis[pairIndex]};
+  }
     // _ 参数名没有使用，占位符
-    MemorizeGame<String>(numberOfPairsOfCards: 2) {_ in "👻"}
+    // MemorizeGame<String>(numberOfPairsOfCards: 2) {_ in "👻"}
     // last argument
     // MemorizeGame<String>(numberOfPairsOfCards: 2) {pairIndex in "👻"}
     // 类型推断
