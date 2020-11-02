@@ -24,10 +24,14 @@ class EmojiMemorizeGame {
   // private(set) 对内可修改, 对外可见
   // private(set) var model: MemorizeGame<String>
   private var model: MemorizeGame<String> =
+    // _ 参数名没有使用，占位符
+    MemorizeGame<String>(numberOfPairsOfCards: 2) {_ in "👻"}
+    // last argument
+    // MemorizeGame<String>(numberOfPairsOfCards: 2) {pairIndex in "👻"}
     // 类型推断
-    MemorizeGame<String>(numberOfPairsOfCards: 2, cardContentFactory: {pairIndex in "👻"})
+    // MemorizeGame<String>(numberOfPairsOfCards: 2, cardContentFactory: {pairIndex in "👻"})
     // inline function
-//    MemorizeGame<String>(numberOfPairsOfCards: 2, cardContentFactory: {(pairIndex: Int) -> String in return "👻"})
+    // MemorizeGame<String>(numberOfPairsOfCards: 2, cardContentFactory: {(pairIndex: Int) -> String in return "👻"})
     // MemorizeGame<String>(numberOfPairsOfCards: 2, cardContentFactory: createCardContent)
     // MemorizeGame<String>(numberOfPairsOfCards: <#T##Int#>, cardContentFactory: <#T##(Int) -> String#>)
   // private var model: MemorizeGame<String> = MemorizeGame<String>(cards: Array<MemorizeGame<String>.Card>)
