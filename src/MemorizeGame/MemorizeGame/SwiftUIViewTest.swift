@@ -20,7 +20,8 @@ struct SwiftUIViewTest: View {
   var body: Text {
     // Text("Hello, SwiftUI!")
     // return 可以省略
-    return Text("Hello, SwiftUI!")
+    return Text("Hello, SwiftUI!").font(.title)
+    // Option + click === open document tips
   }
 }
 
