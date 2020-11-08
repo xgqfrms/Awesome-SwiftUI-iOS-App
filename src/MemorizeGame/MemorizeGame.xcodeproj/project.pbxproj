@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7004E519255826D800F977EB /* BugFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004E518255826D800F977EB /* BugFile.swift */; };
 		701B0DD32549BB6B00D2EEEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B0DD22549BB6B00D2EEEE /* AppDelegate.swift */; };
 		701B0DD52549BB6B00D2EEEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B0DD42549BB6B00D2EEEE /* SceneDelegate.swift */; };
 		701B0DD72549BB6B00D2EEEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B0DD62549BB6B00D2EEEE /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7004E518255826D800F977EB /* BugFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugFile.swift; sourceTree = "<group>"; };
 		701B0DCF2549BB6B00D2EEEE /* MemorizeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemorizeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701B0DD22549BB6B00D2EEEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		701B0DD42549BB6B00D2EEEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				701B0DD22549BB6B00D2EEEE /* AppDelegate.swift */,
 				701B0DD42549BB6B00D2EEEE /* SceneDelegate.swift */,
+				7004E518255826D800F977EB /* BugFile.swift */,
 				701B0DD62549BB6B00D2EEEE /* ContentView.swift */,
 				70C75DFD25503AD7005D4AD6 /* MemoryGame.swift */,
 				70C75DFF255044B7005D4AD6 /* EmojiMemoryGame.swift */,
@@ -87,7 +90,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		701B0DCE2549BB6B00D2EEEE /* MemoryGame */ = {
+		701B0DCE2549BB6B00D2EEEE /* MemorizeGame */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 701B0DE32549BB6C00D2EEEE /* Build configuration list for PBXNativeTarget "MemorizeGame" */;
 			buildPhases = (
@@ -158,6 +161,7 @@
 				701B0DD32549BB6B00D2EEEE /* AppDelegate.swift in Sources */,
 				701B0DD52549BB6B00D2EEEE /* SceneDelegate.swift in Sources */,
 				70C75E00255044B7005D4AD6 /* EmojiMemoryGame.swift in Sources */,
+				7004E519255826D800F977EB /* BugFile.swift in Sources */,
 				701B0DE72549C87F00D2EEEE /* SwiftUIViewTest.swift in Sources */,
 				70C75DFE25503AD7005D4AD6 /* MemoryGame.swift in Sources */,
 				701B0DD72549BB6B00D2EEEE /* ContentView.swift in Sources */,
