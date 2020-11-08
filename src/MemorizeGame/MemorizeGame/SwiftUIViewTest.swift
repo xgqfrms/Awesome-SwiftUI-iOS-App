@@ -20,12 +20,45 @@ struct SwiftUIViewTest: View {
   var body: Text {
     // Text("Hello, SwiftUI!")
     // return 可以省略
-    return Text("Hello, SwiftUI!").font(.title)
+//    return Text("Hello, SwiftUI!").font(.title)
+    return Text("Hello, SwiftUI!").font(Font.title).foregroundColor(Color.pink)
     // Option + click === open document tips
   }
 }
 
 
+
+/*
+
+
+ public static let clear: Color
+
+ public static let black: Color
+
+ public static let white: Color
+
+ public static let gray: Color
+
+ public static let red: Color
+
+ public static let green: Color
+
+ public static let blue: Color
+
+ public static let orange: Color
+
+ public static let yellow: Color
+
+ public static let pink: Color
+
+ public static let purple: Color
+
+ public static let primary: Color
+
+ public static let secondary: Color
+
+
+ */
 
 
 
