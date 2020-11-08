@@ -1,5 +1,5 @@
 //
-//  BugFile.swift
+//  MemoryGame.swift
 //  MemorizeGame
 //
 //  Created by 夏凌晨 on 2020/11/8.
