@@ -74,8 +74,8 @@ class EmojiMemoryGame {
   }
 }
 
-struct EmojiMemoryGame_Previews: PreviewProvider {
-  static var previews: some View {
-    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-  }
-}
+//struct EmojiMemoryGame_Previews: PreviewProvider {
+//  static var previews: some View {
+//    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+//  }
+//}

@@ -57,24 +57,26 @@ struct CardView: View {
 
 
 //  PreviewProvider 仅用于预览，代码在项目中没有实际的意义
-//struct ContentView_Previews: PreviewProvider {
-//  let game = EmojiMemoryGame()
-//  static var previews: some View {
-//    ContentView(viewModel: game)
-//  }
-//}
-
-
 struct ContentView_Previews: PreviewProvider {
-  static let game = EmojiMemoryGame()
   static var previews: some View {
-    ContentView(viewModel: game)
+    ContentView(viewModel: EmojiMemoryGame())
   }
 }
 
+// struct ContentView_Previews: PreviewProvider {
+//   static var previews: some View {
+//     let game = EmojiMemoryGame()
+//     return ContentView(viewModel: game)
+//   }
+// }
 
-//struct ContentView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    ContentView(viewModel: EmojiMemoryGame())
-//  }
-//}
+
+// struct ContentView_Previews: PreviewProvider {
+//   static let game = EmojiMemoryGame()
+//   static var previews: some View {
+//     ContentView(viewModel: game)
+//   }
+// }
+
+
+
