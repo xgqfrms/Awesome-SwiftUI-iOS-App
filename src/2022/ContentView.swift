@@ -382,19 +382,211 @@ import SwiftUI
 //}
 
 
+//struct MyContentView: View {
+//  @State var count = 6;
+//  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+//  var body: some View {
+//    HStack {
+//      // struct ForEach<Data, ID, Content> where Data : RandomAccessCollection, ID : Hashable
+//      // 动态数组范围，使用 id 防止 emoji 重复导致报错
+//      ForEach (emojis[0..<count], id: \.self) { emoji in
+//        CardView(content: emoji);
+//      }
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+
+//struct MyContentView: View {
+//  @State var count = 6;
+//  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+//  var body: some View {
+//    VStack {
+//      HStack {
+//        // struct ForEach<Data, ID, Content> where Data : RandomAccessCollection, ID : Hashable
+//        // 动态数组范围，使用 id 防止 emoji 重复导致报错
+//        ForEach (emojis[0..<count], id: \.self) { emoji in
+//          CardView(content: emoji);
+//        }
+//      }
+//      Spacer()
+//      HStack {
+//        // 按钮
+//        Button (
+//          action: {
+//            //
+//          }, label: {
+//            Text("remove");
+//          }
+//        )
+//        Spacer()
+//        Button (
+//          action: {
+//            //
+//          }, label: {
+//            Text("add");
+//          }
+//        )
+//      }
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+//
+//struct MyContentView: View {
+//  @State var count = 6;
+//  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+//  var body: some View {
+//    VStack {
+//      HStack {
+//        // struct ForEach<Data, ID, Content> where Data : RandomAccessCollection, ID : Hashable
+//        // 动态数组范围，使用 id 防止 emoji 重复导致报错
+//        ForEach (emojis[0..<count], id: \.self) { emoji in
+//          CardView(content: emoji);
+//        }
+//      }
+//      Spacer()
+//      HStack {
+//        // 按钮
+//        Button (
+//          action: {
+//            //
+//          }, label: {
+//            // 系统字体 icon
+//            Image(systemName: "minus.circle");
+//          }
+//        )
+//        Spacer()
+//        Button (
+//          action: {
+//            //
+//          }, label: {
+//            // 系统字体 icon
+//            Image(systemName: "plus.circle");
+//          }
+//        )
+//      }.font(.largeTitle)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+
+//
+//struct MyContentView: View {
+//  // let defaultEmojiCount = 3;
+//  // @State var emojiCount = defaultEmojiCount;
+//  @State var emojiCount = 6;
+//  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+//  // init () {
+//  //  self.emojiCount = self.defaultEmojiCount;
+//  // }
+//  var body: some View {
+//    VStack {
+//      HStack {
+//        // struct ForEach<Data, ID, Content> where Data : RandomAccessCollection, ID : Hashable
+//        // 动态数组范围，使用 id 防止 emoji 重复导致报错
+//        ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
+//          CardView(content: emoji);
+//        }
+//      }
+//      Spacer()
+//      HStack {
+//        // 按钮
+//        Button (
+//          action: {
+//            if(emojiCount > 1) {
+//              emojiCount -= 1;
+//            }
+//            print("remove \(emojiCount)");
+//          }, label: {
+//            // 系统字体 icon
+//            Image(systemName: "minus.circle");
+//          }
+//        )
+//        Spacer()
+//        Button (
+//          action: {
+//            if(emojiCount < emojis.count) {
+//              emojiCount += 1;
+//            }
+//            print("add \(emojiCount)");
+//          }, label: {
+//            // 系统字体 icon
+//            Image(systemName: "plus.circle");
+//          }
+//        )
+//      }
+//      .font(.largeTitle)
+//      .padding(.horizontal)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+
+
 struct MyContentView: View {
-  // 类型推断，省略 Array Type
-  let emojis = ["😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+  @State var emojiCount = 6;
+  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+  // 抽离组件 ？ 数组动态生成
+  var remove: some View {
+    Button (
+      action: {
+        if(emojiCount > 1) {
+          emojiCount -= 1;
+        }
+        print("remove \(emojiCount)");
+      }, label: {
+        Image(systemName: "minus.circle");
+      }
+    )
+    .foregroundColor(.red)
+  }
+  var add: some View {
+    Button (
+      action: {
+        if(emojiCount < emojis.count) {
+          emojiCount += 1;
+        }
+        print("add \(emojiCount)");
+      }, label: {
+        // 系统字体 icon
+        Image(systemName: "plus.circle");
+      }
+    )
+    .foregroundColor(.green)
+  }
   var body: some View {
-    HStack {
-      // 调用函数时候传参数, 会覆盖默认值
-      CardView(content: emojis[0])
-      CardView(content: emojis[1], isFaceUp: false)
-      CardView(content: emojis[2])
-      CardView(content: emojis[3],isFaceUp: false)
+    // view builder
+    VStack {
+      HStack {
+        // id 重复 bug ❌
+        // ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
+        //   CardView(content: emoji);
+        // }
+        // fix id 重复 bug ✅ Array.indices
+        ForEach (emojis[0..<emojiCount].indices, id: \.self) { index in
+          CardView(content: emojis[index]);
+        }
+      }
+      Spacer()
+      HStack {
+        remove
+        Spacer()
+        add
+      }
+      .font(.largeTitle)
+      .padding(.horizontal)
     }
     .padding(.horizontal)
-    .foregroundColor(.red)
+    .foregroundColor(.orange)
   };
 }
 
@@ -408,7 +600,7 @@ struct CardView: View {
       let shape: RoundedRectangle = RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/);
       if(isFaceUp) {
         shape
-          .stroke(lineWidth: 3)
+          .stroke(lineWidth: 7)
         shape
           .fill()
           .foregroundColor(.white)
@@ -422,15 +614,10 @@ struct CardView: View {
       }
     }
     .onTapGesture {
-      let const = 666;
-      print("perform \(const)");
       isFaceUp = !isFaceUp;
     }
   };
 }
-
-
-
 
 
 
