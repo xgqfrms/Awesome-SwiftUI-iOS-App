@@ -82,10 +82,10 @@ import SwiftUI
 // clear code, 简写
 //struct MyContentView: View {
 //  var body: some View {
-//    // 不需要显试的 return
+//    // 不需要显式的 return
 //    ZStack(content: {
 //      RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-//        // 不需要显试的 ;
+//        // 不需要显式的 ;
 //        .stroke(lineWidth: 3)
 //      Text("Hello, SwiftUI!")
 //        .fontWeight(.bold)
@@ -124,26 +124,275 @@ import SwiftUI
 //}
 
 
+//struct MyContentView: View {
+//  var body: some View {
+//    //ZStack(alignment: .center, content: {
+//    //  RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//    //    .stroke(lineWidth: 3)
+//    //  Text("Hello, SwiftUI!")
+//    //    .fontWeight(.bold)
+//    //})
+//    //.frame(width: 100.0, height: 200.0)
+//    //.padding(.horizontal)
+//    //.foregroundColor(.yellow)
+//    // ZStack 参数都省略可以去掉一层 (), 类似 View 函数
+//    ZStack {
+//      RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//        .stroke(lineWidth: 3)
+//      Text("👻")
+//        .fontWeight(.bold)
+//        .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//    }
+//    .frame(width: 100.0, height: 200.0)
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+//struct MyContentView: View {
+//  var body: some View {
+//    // 水平方向布局
+//    HStack {
+//      ZStack {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .stroke(lineWidth: 3)
+//        Text("👻")
+//          .fontWeight(.bold)
+//          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//      }
+//      .frame(width: 100.0, height: 200.0)
+//      .padding(.horizontal)
+//      .foregroundColor(.red)
+//      ZStack {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .stroke(lineWidth: 3)
+//        Text("👻")
+//          .fontWeight(.bold)
+//          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//      }
+//      .frame(width: 100.0, height: 200.0)
+//      .padding(.horizontal)
+//      .foregroundColor(.red)
+//    }
+//  };
+//}
+
+//
+//struct MyContentView: View {
+//  var body: some View {
+//    // 水平方向布局
+//    HStack {
+//      CardView()
+//      CardView()
+//      CardView()
+//      CardView()
+//    }
+//    // .frame(width: 100.0, height: 200.0)
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+//
+//
+//struct CardView: View {
+//  // 初始化: 值或函数
+//  // var isFaceUp: Bool = false;
+//  var isFaceUp: Bool {
+//    return true;
+//  };
+//  var body: some View {
+//    ZStack {
+//      if(isFaceUp) {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .stroke(lineWidth: 12)
+//        // fill 前景色
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .fill()
+//          .foregroundColor(.white)
+//        Text("👻")
+//          .fontWeight(.bold)
+//          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//      } else {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .fill()
+//          .foregroundColor(.yellow)
+//      }
+//    }
+//  };
+//}
+
+
+//struct MyContentView: View {
+//  var body: some View {
+//    HStack {
+//      // 调用函数时候传参数
+//      CardView(isFaceUp: true)
+//      CardView(isFaceUp: false)
+//      CardView(isFaceUp: true)
+//      CardView(isFaceUp: false)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+//
+//
+//struct CardView: View {
+//  // 没有初始化值， 必须在调用函数时候传参数
+//  var isFaceUp: Bool
+//  var body: some View {
+//    ZStack {
+//      if(isFaceUp) {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .stroke(lineWidth: 12)
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .fill()
+//          .foregroundColor(.white)
+//        Text("👻")
+//          .fontWeight(.bold)
+//          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//      } else {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .fill()
+//          .foregroundColor(.yellow)
+//      }
+//    }
+//  };
+//}
+
+
+//struct MyContentView: View {
+//  var body: some View {
+//    HStack {
+//      // 调用函数时候传参数, 会覆盖默认值
+//      CardView()
+//      CardView(isFaceUp: false)
+//      CardView()
+//      CardView(isFaceUp: false)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+
+//struct CardView: View {
+//  // 有初始化值， 在调用函数时候传参数会覆盖默认值
+//  var isFaceUp: Bool = true;
+//  var body: some View {
+//    ZStack {
+//      if(isFaceUp) {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .stroke(lineWidth: 12)
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .fill()
+//          .foregroundColor(.white)
+//        Text("👻")
+//          .fontWeight(.bold)
+//          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//      } else {
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//          .fill()
+//          .foregroundColor(.yellow)
+//      }
+//    }
+//  };
+//}
+
+//
+//struct CardView: View {
+//  // 有初始化值， 在调用函数时候传参数会覆盖默认值
+//  // var isFaceUp: Bool = true;
+//  // 需要使用 @State 才可以修改值； SwiftUI 默认 struct 是不可变的，不可以直接修改
+//  // @State public var isFaceUp: Bool = true;
+//  @State var isFaceUp: Bool = true;
+//  var body: some View {
+//    ZStack {
+//      // 使用局部作用域变量，提高代码复用率
+//      // var shape = RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/);
+//      // Variable 'shape' was never mutated; consider changing to 'let' constant
+//      // let shape = RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/);
+//      // 类型推断，不需要显式的声明
+//      let shape: RoundedRectangle = RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/);
+//      if(isFaceUp) {
+//        shape
+//          .stroke(lineWidth: 12)
+//        shape
+//          .fill()
+//          .foregroundColor(.white)
+//        Text("👻")
+//          .fontWeight(.bold)
+//          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+//      } else {
+//        shape
+//          .fill()
+//          .foregroundColor(.yellow)
+//      }
+//    }
+//    .onTapGesture(perform: {
+//      let const = 666;
+//      print("perform \(const)");
+//      // self !== this
+//      // self.isFaceUp = !self.isFaceUp;
+//      isFaceUp = !isFaceUp;
+//    })
+//    // 最后的一个 label 参数可以省略，简写
+//    // .onTapGesture {
+//    //   let const = 666;
+//    //   print("perform \(const)");
+//    // }
+//  };
+//}
+//
+
+
+//struct MyContentView: View {
+//  // 类型推断，省略 Array Type
+//  let emojis = ["😃", "🐻", "🍔", "⚽"];
+//  // let emojis: [String] = ["😃", "🐻", "🍔", "⚽"];
+//  // let emojis: Array<String> = ["😃", "🐻", "🍔", "⚽"];
+//  var body: some View {
+//    HStack {
+//      // 调用函数时候传参数, 会覆盖默认值
+//      CardView(content: "😃")
+//      CardView(content: "🐻", isFaceUp: false)
+//      CardView(content: "🍔")
+//      CardView(content: "⚽",isFaceUp: false)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+
+//struct MyContentView: View {
+//  // 类型推断，省略 Array Type
+//  let emojis = ["😃", "🐻", "🍔", "⚽"];
+//  var body: some View {
+//    HStack {
+//      // 调用函数时候传参数, 会覆盖默认值
+//      CardView(content: emojis[0])
+//      CardView(content: emojis[1], isFaceUp: false)
+//      CardView(content: emojis[2])
+//      CardView(content: emojis[3],isFaceUp: false)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.red)
+//  };
+//}
+
+
 struct MyContentView: View {
+  // 类型推断，省略 Array Type
+  let emojis = ["😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
   var body: some View {
-    //ZStack(alignment: .center, content: {
-    //  RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-    //    .stroke(lineWidth: 3)
-    //  Text("Hello, SwiftUI!")
-    //    .fontWeight(.bold)
-    //})
-    //.frame(width: 100.0, height: 200.0)
-    //.padding(.horizontal)
-    //.foregroundColor(.yellow)
-    // ZStack 参数都省略可以去掉一层 (), 类似 View 函数
-    ZStack {
-      RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-        .stroke(lineWidth: 3)
-      Text("👻")
-        .fontWeight(.bold)
-        .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+    HStack {
+      // 调用函数时候传参数, 会覆盖默认值
+      CardView(content: emojis[0])
+      CardView(content: emojis[1], isFaceUp: false)
+      CardView(content: emojis[2])
+      CardView(content: emojis[3],isFaceUp: false)
     }
-    .frame(width: 100.0, height: 200.0)
     .padding(.horizontal)
     .foregroundColor(.red)
   };
@@ -151,7 +400,34 @@ struct MyContentView: View {
 
 
 
-
+struct CardView: View {
+  var content: String = "";
+  @State var isFaceUp: Bool = true;
+  var body: some View {
+    ZStack {
+      let shape: RoundedRectangle = RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/);
+      if(isFaceUp) {
+        shape
+          .stroke(lineWidth: 3)
+        shape
+          .fill()
+          .foregroundColor(.white)
+        Text(content)
+          .fontWeight(.bold)
+          .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+      } else {
+        shape
+          .fill()
+          .foregroundColor(.yellow)
+      }
+    }
+    .onTapGesture {
+      let const = 666;
+      print("perform \(const)");
+      isFaceUp = !isFaceUp;
+    }
+  };
+}
 
 
 
@@ -165,7 +441,13 @@ struct MyContentView: View {
 // 仅用于 resume 预览，不是真实有用的业务代码，可忽略
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
+    // 开启多个预览
     MyContentView()
+      // dark mode 暗黑模式
+      .preferredColorScheme(.dark)
+    MyContentView()
+      // light mode 默认模式
+      .preferredColorScheme(.light)
   }
 }
 //struct MyContentView_Previews: PreviewProvider {
