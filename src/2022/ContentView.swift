@@ -530,16 +530,132 @@ import SwiftUI
 //  };
 //}
 
+//
+//
+//struct MyContentView: View {
+//  @State var emojiCount = 6;
+//  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+//  // 抽离组件 ？ 数组动态生成
+//  var remove: some View {
+//    Button (
+//      action: {
+//        if(emojiCount > 1) {
+//          emojiCount -= 1;
+//        }
+//        print("remove \(emojiCount)");
+//      }, label: {
+//        Image(systemName: "minus.circle");
+//      }
+//    )
+//    .foregroundColor(.red)
+//  }
+//  var add: some View {
+//    Button (
+//      action: {
+//        if(emojiCount < emojis.count) {
+//          emojiCount += 1;
+//        }
+//        print("add \(emojiCount)");
+//      }, label: {
+//        // 系统字体 icon
+//        Image(systemName: "plus.circle");
+//      }
+//    )
+//    .foregroundColor(.green)
+//  }
+//  var body: some View {
+//    // view builder
+//    VStack {
+//      HStack {
+//        // id 重复 bug ❌
+//        // ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
+//        //   CardView(content: emoji);
+//        // }
+//        // fix id 重复 bug ✅ Array.indices
+//        ForEach (emojis[0..<emojiCount].indices, id: \.self) { index in
+//          CardView(content: emojis[index]);
+//        }
+//      }
+//      Spacer()
+//      HStack {
+//        remove
+//        Spacer()
+//        add
+//      }
+//      .font(.largeTitle)
+//      .padding(.horizontal)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.orange)
+//  };
+//}
+
+//
+//struct MyContentView: View {
+//  @State var emojiCount = 12;
+//  let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
+//  // 抽离组件 ？ 数组动态生成
+//  var remove: some View {
+//    Button (
+//      action: {
+//        if(emojiCount > 1) {
+//          emojiCount -= 1;
+//        }
+//        print("remove \(emojiCount)");
+//      }, label: {
+//        Image(systemName: "minus.circle");
+//      }
+//    )
+//    .foregroundColor(.red)
+//  }
+//  var add: some View {
+//    Button (
+//      action: {
+//        if(emojiCount < emojis.count) {
+//          emojiCount += 1;
+//        }
+//        print("add \(emojiCount)");
+//      }, label: {
+//        // 系统字体 icon
+//        Image(systemName: "plus.circle");
+//      }
+//    )
+//    .foregroundColor(.green)
+//  }
+//  var body: some View {
+//    // view builder
+//    VStack {
+//      // grid 布局
+//      LazyVGrid (columns: [GridItem(.adaptive(minimum: 70, maximum: 100))]) {
+//        ForEach (emojis[0..<emojiCount].indices, id: \.self) { index in
+//          CardView(content: emojis[index])
+//            .aspectRatio(2/3, contentMode: .fit);
+//        }
+//      }
+//      Spacer()
+//      HStack {
+//        remove
+//        Spacer()
+//        add
+//      }
+//      .font(.largeTitle)
+//      .padding(.horizontal)
+//    }
+//    .padding(.horizontal)
+//    .foregroundColor(.orange)
+//  };
+//}
+
 
 
 struct MyContentView: View {
-  @State var emojiCount = 6;
+  @State var emojiCount = 23;
   let emojis = ["😃", "😃", "🐻", "🍔", "⚽","🦍","🦊","🦌","🦏","🦇","🦅","🦆","🦉","🦎","🦈","🦐","🦑","🦋","🥀","🦓","🦒","🦔","🦕","🦖","🦗","🐉","🐲","🌵","🎄","🌲","🌳","🌴","🌱","🌿","☘","🍀","🎍","🎋","🍃","🍂","🍁","🌾","🌺","🌻","🌹","🌷","🌼","🌸","💐","🍄","🌰","🎃","🐚"];
   // 抽离组件 ？ 数组动态生成
   var remove: some View {
     Button (
       action: {
-        if(emojiCount > 1) {
+        if(emojiCount > 0) {
           emojiCount -= 1;
         }
         print("remove \(emojiCount)");
@@ -566,14 +682,14 @@ struct MyContentView: View {
   var body: some View {
     // view builder
     VStack {
-      HStack {
-        // id 重复 bug ❌
-        // ForEach (emojis[0..<emojiCount], id: \.self) { emoji in
-        //   CardView(content: emoji);
-        // }
-        // fix id 重复 bug ✅ Array.indices
-        ForEach (emojis[0..<emojiCount].indices, id: \.self) { index in
-          CardView(content: emojis[index]);
+      // 滚动视图容器
+      ScrollView {
+        // grid 布局
+        LazyVGrid (columns: [GridItem(.adaptive(minimum: 70, maximum: 100))]) {
+          ForEach (emojis[0..<emojiCount].indices, id: \.self) { index in
+            CardView(content: emojis[index])
+              .aspectRatio(2/3, contentMode: .fit);
+          }
         }
       }
       Spacer()
@@ -596,14 +712,16 @@ struct CardView: View {
   var content: String = "";
   @State var isFaceUp: Bool = true;
   var body: some View {
+    // 调整 z-index 堆叠顺序 （先 fill 在 strokeBorder）
     ZStack {
       let shape: RoundedRectangle = RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/);
       if(isFaceUp) {
         shape
-          .stroke(lineWidth: 7)
-        shape
           .fill()
           .foregroundColor(.white)
+        shape
+          // 防止 overflow 剪切
+          .strokeBorder(lineWidth: 3)
         Text(content)
           .fontWeight(.bold)
           .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
